@@ -63,25 +63,21 @@ public class NeonBan extends JavaPlugin {
     }
 
     // Download and ban players
+    // 下载并封禁玩家
     private void downloadAndBanPlayers() {
         getLogger().info("Downloading ban list from: " + downloadUrl);
         try {
-            // Connect to the URL
             HttpURLConnection connection = (HttpURLConnection) new URL(downloadUrl).openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
 
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                // Parse the XML document
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
                 Document document = builder.parse(connection.getInputStream());
-
-                // Normalize the document
                 document.getDocumentElement().normalize();
 
-                // Get the list of players
                 NodeList playerList = document.getElementsByTagName("player");
 
                 for (int i = 0; i < playerList.getLength(); i++) {
@@ -90,13 +86,14 @@ public class NeonBan extends JavaPlugin {
                     if (playerNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element playerElement = (Element) playerNode;
 
-                        // Extract UUID and reason
+                        // 提取 name 和 uuid
+                        String name = playerElement.getElementsByTagName("name").item(0).getTextContent();
                         String uuid = playerElement.getElementsByTagName("uuid").item(0).getTextContent();
                         String reason = playerElement.getElementsByTagName("reason").item(0).getTextContent();
 
-                        // Ban the player
-                        Bukkit.getBanList(org.bukkit.BanList.Type.NAME).addBan(uuid, reason, null, null);
-                        getLogger().info("Banned player: " + uuid + " | Reason: " + reason);
+                        // 使用 UUID 封禁玩家，并将 name 正确保存到 banned-players.json
+                        Bukkit.getBanList(org.bukkit.BanList.Type.NAME).addBan(name, reason, null, null);
+                        getLogger().info("Banned player: Name = " + name + ", UUID = " + uuid + " | Reason: " + reason);
                     }
                 }
             } else {
