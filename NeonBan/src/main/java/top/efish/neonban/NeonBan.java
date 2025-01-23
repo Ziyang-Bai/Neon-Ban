@@ -133,19 +133,27 @@ public class NeonBan extends JavaPlugin {
                     break;
                 case "pardon":
                     if (args.length == 2 && sender.hasPermission("neonban.pardon")) {
-                        UUID targetUUID;
-                        try {
-                            targetUUID = UUID.fromString(args[1]);
-                        } catch (IllegalArgumentException e) {
-                            sender.sendMessage(ChatColor.RED + "Invalid UUID format.");
-                            return true;
+                        String targetUUID = args[1];
+
+                        // 遍历 BanList，按 UUID 进行匹配
+                        boolean found = false;
+                        for (org.bukkit.BanEntry entry : Bukkit.getBanList(org.bukkit.BanList.Type.NAME).getBanEntries()) {
+                            if (entry.getTarget().equalsIgnoreCase(targetUUID)) {
+                                Bukkit.getBanList(org.bukkit.BanList.Type.NAME).pardon(entry.getTarget());
+                                sender.sendMessage(ChatColor.GREEN + "Player " + targetUUID + " has been pardoned.");
+                                found = true;
+                                break;
+                            }
                         }
-                        Bukkit.getBanList(org.bukkit.BanList.Type.NAME).pardon(targetUUID.toString());
-                        sender.sendMessage(ChatColor.GREEN + "Player " + args[1] + " has been pardoned.");
+
+                        if (!found) {
+                            sender.sendMessage(ChatColor.RED + "Player with UUID " + targetUUID + " is not banned.");
+                        }
                     } else {
                         sender.sendMessage(ChatColor.RED + "Usage: /neonban pardon <UUID>");
                     }
                     break;
+
                 default:
                     sender.sendMessage(ChatColor.YELLOW + "Unknown command. Usage: /neonban <update|list|pardon>");
                     break;
