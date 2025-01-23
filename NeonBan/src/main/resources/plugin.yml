@@ -1,0 +1,4 @@
+name: NeonBan
+version: '${project.version}'
+main: top.efish.neonban.NeonBan
+api-version: '1.21'
