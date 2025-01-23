@@ -1,2 +1,3 @@
 *.jar
-/
+/NeonBan/.idea/
+/NeonBan/target/
