@@ -5,7 +5,7 @@ api-version: 1.21
 commands:
   neonban:
     description: NeonBan commands
-    usage: /<command> <update|list|pardon>
+    usage: /<command> <update|list|version|report>
 permissions:
   neonban.update:
     description: Allows the user to update the ban list
@@ -13,6 +13,9 @@ permissions:
   neonban.list:
     description: Allows the user to list banned players
     default: op
-  neonban.pardon:
-    description: Allows the user to pardon a player
+  neonban.version:
+    description: Allow the user check the plugin version
     default: op
+  neonban.report:
+    description: Allows the user to receive the report link
+    default: not op

@@ -1,3 +1,4 @@
 downloadUrl: "https://neonban.efish.top/defsub.xml"
+pardonUrl: "https://neonban.efish.top/defsub-pardoned.xml"
 updateInterval: 3600 # 更新间隔时间（秒）
 language: "en"
