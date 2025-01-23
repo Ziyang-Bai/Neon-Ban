@@ -16,9 +16,11 @@ Multi-server banning penalties imposed on players
 
 
 ![Snipaste_2025-01-23_20-02-40](https://github.com/user-attachments/assets/d3bd4f98-a4a6-40ca-b1ef-42287320a2d9)
+
 **封禁者视角**
 
 ![Snipaste_2025-01-23_20-02-48](https://github.com/user-attachments/assets/18a23c06-dea5-4189-ba87-5364be53dbbd)
+
 **管理员视角**
 
 # 指令简介
