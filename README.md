@@ -12,4 +12,3 @@ Multi-server banning penalties imposed on players
 |1.21.2|N/A|
 |1.21.1|N/A|
 |1.21|v0.1|
-|--------|-------|
