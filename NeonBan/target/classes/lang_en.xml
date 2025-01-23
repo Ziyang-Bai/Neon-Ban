@@ -1,5 +1,0 @@
-<messages>
-    <ban-success>Player {PLAYER} has been banned.</ban-success>
-    <pardon-success>Player {PLAYER} has been pardoned.</pardon-success>
-    <no-permission>You don't have permission to use this command.</no-permission>
-</messages>
