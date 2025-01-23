@@ -1,0 +1,18 @@
+name: NeonBan
+main: neonban.efish.top.neonBan.NeonBan
+version: 0.1
+api-version: 1.21
+commands:
+  neonban:
+    description: NeonBan commands
+    usage: /<command> <update|list|pardon>
+permissions:
+  neonban.update:
+    description: Allows the user to update the ban list
+    default: op
+  neonban.list:
+    description: Allows the user to list banned players
+    default: op
+  neonban.pardon:
+    description: Allows the user to pardon a player
+    default: op

@@ -1,0 +1,5 @@
+<config>
+    <downloadUrl>https://neonban.efish.top/defsub.xml</downloadUrl>
+    <updateInterval>3600</updateInterval> <!-- in seconds -->
+    <language>en</language>
+</config>

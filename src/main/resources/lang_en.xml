@@ -1,0 +1,7 @@
+<language>
+    <updateSuccess>Ban list updated successfully.</updateSuccess>
+    <updateFail>Failed to update ban list.</updateFail>
+    <listHeader>Banned Players:</listHeader>
+    <pardonSuccess>Player pardoned successfully.</pardonSuccess>
+    <pardonFail>Failed to pardon player.</pardonFail>
+</language>
