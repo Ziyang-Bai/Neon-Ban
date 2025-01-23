@@ -7,4 +7,4 @@ Multi-server banning penalties imposed on players
 # 支持服务器核心列表
 |MC版本|支持版本|
 |--------|-------|
-|1.21.x|[v0.1 Download]([https://markdown.com.cn](https://github.com/Ziyang-Bai/Neon-Ban/releases/tag/v0.1))|
+|1.21.x|[v0.1 Download](https://github.com/Ziyang-Bai/Neon-Ban/releases/tag/v0.1)|
